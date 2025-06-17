@@ -1,3 +1,3 @@
-serve:
+server:
 	hugo server --buildDrafts --disableFastRender
 
