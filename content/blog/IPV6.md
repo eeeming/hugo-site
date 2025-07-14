@@ -36,8 +36,8 @@ IPv6地址由 **128位二进制** 组成，通常表示为 **8组16位十六进�
 
 - 和单播形式一样，但是行为不同，只会被最近的一个节点所接受
 
-![](assets/ipv6-learn/20250605220303.png)
-![](assets/ipv6-learn/20250605220308.png)
+![](assets/ipv6/20250605220303.png)
+![](assets/ipv6/20250605220308.png)
 
 ### ULA vs. **Link-local Address**
 
@@ -76,7 +76,7 @@ IPv6地址由 **128位二进制** 组成，通常表示为 **8组16位十六进�
 
 对于实现 NDP，只需要将自己的所有 IPv6 地址对应的 Solicited-node multicast address 加入多播组，即可收到来自其他主机的NS请求
 
-![](assets/ipv6-learn/20250605215614.png)
+![](assets/ipv6/20250605215614.png)
 
 多播组的很好避免了IPv4请求中ARP对于0.0.0.0地址的监听，只有目标主机会相应，其他主机无需处理
 
