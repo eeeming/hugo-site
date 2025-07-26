@@ -203,3 +203,38 @@ The Command Pattern encapsulates a request as an object, thereby letting you par
 * Invoker 是调用者，负责调用 Command 的 execute 方法，不关心具体的实现细节。
 * 例如在遥控器中，遥控器是 Invoker，里面存储着具体的 Command 对象，每个 Command 对象都负责存储对 Receiver 的具体操作。
 
+{{% details title="为什么需要 Receiver, 而不是在 Command 中直接实现具体的操作？" %}}
+
+因为这样可以让 Command 和 Receiver 解耦，Command 只需要知道如何调用 Receiver，而不需要知道 Receiver 的具体实现细节。这样可以让代码更易于维护和扩展。
+
+{{% /details %}}
+
+{{% details title="如何实现多次撤销操作的历史记录？" %}}
+
+使用一个栈来保存历史记录，每次执行命令时将命令压入栈中，撤销时从栈中弹出命令并执行其撤销操作。
+
+{{% /details %}}
+
+### MacroCommand
+
+有时候我们需要一次执行多个命令，这时可以使用宏命令（MacroCommand）。宏命令是一个命令对象，它包含了多个其他命令对象，并且可以一次性执行所有这些命令。
+
+```java
+public class MacroCommand implements Command {
+    Command[] commands;
+    public MacroCommand(Command[] commands) {
+        this.commands = commands;
+    }
+    public void execute() {
+        for (Command command : commands) {
+            command.execute();
+        }
+    }
+} 
+```
+
+{{% details title="为什么实例化一个ABCDCommand，把需要的操作[A,B,C,D]放在一起？" %}}
+
+没必要。用MacroCommand可以利用参数`Command[] commands`，动态决定哪些Commands要包含在MacroCommand中，因此使用MacroCommand会有更多的灵活性。
+
+{{% /details %}}
