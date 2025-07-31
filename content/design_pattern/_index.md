@@ -11,3 +11,9 @@ type: "docs"
   {{< card link="./factory_pattern/#abstract-factory-pattern" title="Abstract Factory Pattern" icon="sparkles" >}}
   {{< card link="./factory_pattern/#the-dependency-inversion-principle" title="The Dependency Inversion Principle" icon="sparkles" >}}
 {{< /cards >}}
+
+### Singleton Pattern
+
+{{< cards >}}
+
+{{< /cards >}}

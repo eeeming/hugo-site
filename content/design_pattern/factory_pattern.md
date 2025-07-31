@@ -525,9 +525,9 @@ public class CheesePizza extends Pizza {
 
 ## Abstract Factory vs. Factory Method
 
-* Factory Method 和 Abstract Factory 的目的都是为了创建对象，Factory Method使用继承来改变产品的创建方式，而 Abstract Factory 使用组合来创建一组相关的产品。
-  * Factory Method 使用扩展子类的方式来构建不同的产品
-  * Abstract Factory 通过实现工厂接口来创建一组相关的产品
+* Factory Method 和 Abstract Factory 的目的都是为了创建对象:
+  * Factory Method 使用**扩展子类的方式来构建不同的产品**
+  * Abstract Factory 通过**实现工厂接口来创建一组相关的产品**
 * Factory Method 的扩展的子类都是 "for one product"，而 Abstract Factory 的扩展的子类是 "for a family of products"
 * 如果要添加一个新的产品类型，Factory Method 只需要添加一个新的子类，而 Abstract Factory 需要添加一个新的工厂类和一个新的产品类。
 * Abstract Factory可以保证当一个client使用某个工厂时，所有的产品都是相关的（a family of products）
